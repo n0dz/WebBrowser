@@ -2,46 +2,44 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.HomeScreen"
-    android:background="@drawable/bg_main"
+    tools:context=".Fragments.NewTabFragment"
+    android:background="#CC7E7E"
     >
 
     <EditText
-        android:id="@+id/searchBox"
+        android:id="@+id/searchBoxFrag"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:background="@drawable/bg_et"
         android:hint="Search..."
         android:padding="10dp"
-        android:textAlignment="center"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/searchBtn"
-        android:layout_width="40dp"
+        android:id="@+id/searchBtnFrag"
+        android:layout_width="48dp"
         android:layout_height="0dp"
         android:background="@drawable/bg_et"
         android:src="@drawable/ic_baseline_search_24"
-        app:tint="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/searchBox"
-        app:layout_constraintEnd_toEndOf="@+id/searchBox"
-        app:layout_constraintTop_toTopOf="@+id/searchBox" />
+        app:layout_constraintBottom_toBottomOf="@+id/searchBoxFrag"
+        app:layout_constraintEnd_toEndOf="@+id/searchBoxFrag"
+        app:layout_constraintTop_toTopOf="@+id/searchBoxFrag" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:id="@+id/imageViewFrag"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:src="@drawable/firefox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchBox" />
+        app:layout_constraintTop_toBottomOf="@+id/searchBoxFrag" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,15 +2,17 @@ package com.nodz.browser.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.nodz.browser.R;
 import com.nodz.browser.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,22 +28,22 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
         customWebViewClient client = new customWebViewClient(this);
-
         binding.webView.setWebViewClient(client);
         binding.webView.getSettings().setJavaScriptEnabled(true);
-        binding.webView.loadUrl("https://www.google.com/search?q="+getIntent().getStringExtra("query"));
+
+        binding.homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, HomeScreen.class));
+            }
+        });
+
+        if(getIntent().getIntExtra("type",0) == 1)
+            binding.webView.loadUrl("https://www.google.com/search?q="+getIntent().getStringExtra("query"));
+        if(getIntent().getIntExtra("type",0) == 2)
+            binding.webView.loadUrl("https://www.google.com/search?q="+getIntent().getStringExtra("queryFrag"));
 
     }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_BACK && this.binding.webView.canGoBack()){
-            this.binding.webView.goBack();
-            return true;
-        }
-        return super.onKeyDown(keyCode,event);
-    }
-
 
     class customWebViewClient extends WebViewClient {
         private Activity activity;
@@ -63,4 +65,16 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK && this.binding.webView.canGoBack()){
+            this.binding.webView.goBack();
+            return true;
+        }
+        return super.onKeyDown(keyCode,event);
+    }
+
+
+
 }
