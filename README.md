@@ -2,8 +2,11 @@
 - Simple Web Browser Application
 - WebView Implementation
 
-## ScreenShots
-![browserApp](https://user-images.githubusercontent.com/43600925/122643944-71212900-d0c7-11eb-836b-13e0637cddfd.gif)
+## APP 
+![browserApp](https://user-images.githubusercontent.com/43600925/122644874-42598180-d0cc-11eb-9b58-e715249f4091.gif)
+
+
+
 
 
 
