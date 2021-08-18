@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
         customWebViewClient client = new customWebViewClient(this);
         binding.webView.setWebViewClient(client);
         binding.webView.getSettings().setJavaScriptEnabled(true);
-
+		
+		//testing lvda lassan
+		
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
